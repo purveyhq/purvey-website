@@ -1,0 +1,52 @@
+const menu=document.querySelector('.menu'),nav=document.querySelector('nav');const mobileMenu=window.matchMedia('(max-width: 760px)');function setMenu(open){nav.classList.toggle('open',open);menu.setAttribute('aria-expanded',String(open));menu.setAttribute('aria-label',open?'Close navigation':'Open navigation');nav.inert=mobileMenu.matches&&!open;}menu.addEventListener('click',()=>setMenu(!nav.classList.contains('open')));nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));document.addEventListener('keydown',e=>{if(e.key==='Escape'&&nav.classList.contains('open')){setMenu(false);menu.focus()}});document.addEventListener('click',e=>{if(mobileMenu.matches&&!nav.contains(e.target)&&!menu.contains(e.target))setMenu(false)});mobileMenu.addEventListener('change',()=>setMenu(false));setMenu(false);
+const dialog=document.querySelector('#plan-dialog');const descriptions={Free:'Start exploring the storefront and core tools for managing your business.',Starter:'Manage up to 150 active products, add 1 staff member and run coupon campaigns. Starts at ₦3,500 per month.',Growth:'Manage up to 1,000 active products, add 5 staff members and access advanced analytics. Starts at ₦10,000 per month.'};document.querySelectorAll('[data-plan]').forEach(b=>b.addEventListener('click',()=>{document.querySelector('#plan-heading').textContent='Explore '+b.dataset.plan;document.querySelector('#plan-description').textContent=descriptions[b.dataset.plan];dialog.showModal()}));document.querySelector('.close-dialog').addEventListener('click',()=>dialog.close());dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close()}});
+const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
+const revealTargets=document.querySelectorAll('.intro,.tools-heading,.tools-grid article,.social-section,.steps>div,.plans article,.faq,.closing');
+if(!reduced.matches&&'IntersectionObserver' in window){revealTargets.forEach((el,i)=>{el.classList.add('reveal');if(el.closest('.tools-grid')||el.closest('.steps'))el.style.transitionDelay=(i%2)*90+'ms'});const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in-view');observer.unobserve(e.target)}}),{threshold:.12});revealTargets.forEach(el=>observer.observe(el));}
+const cards=[...document.querySelectorAll('.feature-stack .feature')];
+const cardObserver=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('entered');cardObserver.unobserve(e.target)}}),{threshold:.18});cards.forEach(el=>cardObserver.observe(el));
+function layoutCards(){const headerHeight=document.querySelector('header').offsetHeight;cards.forEach((card,i)=>{const top=Math.min(headerHeight+14,window.innerHeight-card.offsetHeight-24)+i*8;card.style.setProperty('--card-top',top+'px')});updateStack()}function updateStack(){cards.forEach(card=>{card.style.transform=''})}window.addEventListener('resize',layoutCards);reduced.addEventListener('change',()=>{revealTargets.forEach(el=>el.classList.add('in-view'));cards.forEach(el=>el.classList.add('entered'));layoutCards()});if('ResizeObserver' in window){const sizeObserver=new ResizeObserver(layoutCards);cards.forEach(c=>sizeObserver.observe(c))}document.fonts.ready.then(layoutCards);layoutCards();
+document.querySelectorAll('[data-view]').forEach(b=>b.addEventListener('click',()=>{const panel=document.querySelector('.dashboard-main');panel.classList.remove('view-change');requestAnimationFrame(()=>panel.classList.add('view-change'))}));
+const toolContent={"payments": "<img class=\"tool-illustration\" src=\"assets/payments-illustration.png\" alt=\"Payments. Follow confirmed and outstanding payments in one place.\" width=\"612\" height=\"408\" decoding=\"async\"><span class=\"sr-only\">Follow confirmed and outstanding payments in one place.</span>", "customers": "<img class=\"tool-illustration\" src=\"assets/customers-illustration.png\" alt=\"Customer orders. See customer orders and confirmed spend together.\" width=\"666\" height=\"375\" decoding=\"async\"><span class=\"sr-only\">See customer orders and confirmed spend together.</span>", "overview": "<img class=\"tool-illustration\" src=\"assets/overview-illustration.png\" alt=\"Sales and business overview. Keep a clear view of sales, orders and products.\" width=\"666\" height=\"375\" decoding=\"async\"><span class=\"sr-only\">Keep a clear view of sales, orders and products.</span>", "promotions": "<img class=\"tool-illustration\" src=\"assets/promotions-illustration.png\" alt=\"Coupon campaign. Create coupon campaigns on Starter and Growth.\" width=\"666\" height=\"375\" decoding=\"async\"><span class=\"sr-only\">Create coupon campaigns on Starter and Growth.</span>"};
+const tools=[...document.querySelectorAll('[data-tool]')],toolPanel=document.querySelector('#tool-panel');
+// Keep all four images mounted so tab changes reuse loaded, decoded artwork.
+const toolViews=new Map(tools.map(btn=>{const view=document.createElement('div');view.className='tool-art';view.hidden=true;view.innerHTML=toolContent[btn.dataset.tool];toolPanel.append(view);const image=view.querySelector('img');image.loading='eager';if(image.decode)image.decode().catch(()=>{});return [btn.dataset.tool,view]}));
+function selectTool(btn){tools.forEach(t=>{const active=t===btn;t.setAttribute('aria-selected',String(active));t.tabIndex=active?0:-1;toolViews.get(t.dataset.tool).hidden=!active});toolPanel.setAttribute('aria-labelledby',btn.id)}
+tools.forEach((b,i)=>{b.addEventListener('click',()=>selectTool(b));b.addEventListener('keydown',e=>{let n=i;if(e.key==='ArrowDown'||e.key==='ArrowRight')n=(i+1)%tools.length;else if(e.key==='ArrowUp'||e.key==='ArrowLeft')n=(i+tools.length-1)%tools.length;else if(e.key==='Home')n=0;else if(e.key==='End')n=tools.length-1;else return;e.preventDefault();tools[n].focus();selectTool(tools[n])})});selectTool(tools[0]);
+const motionButton=document.querySelector('.motion-toggle');motionButton.addEventListener('click',()=>{const paused=document.querySelector('.testimonials').classList.toggle('paused');motionButton.setAttribute('aria-pressed',String(paused));motionButton.textContent=paused?'Resume cards':'Pause cards'});
+const legalDialog=document.querySelector('#legal-dialog');document.querySelectorAll('[data-legal]').forEach(b=>b.addEventListener('click',()=>{document.querySelector('#legal-heading').textContent=b.dataset.legal;legalDialog.showModal()}));document.querySelector('.close-legal').addEventListener('click',()=>legalDialog.close());document.querySelector('#legal-done').addEventListener('click',()=>legalDialog.close());
+let heroVisible=true;const rotatingWords=[...document.querySelectorAll('.rotating-word .word')];let wordIndex=0,wordTimer;function startWordRotation(){clearTimeout(wordTimer);if(reduced.matches){rotatingWords.forEach((w,i)=>{w.classList.toggle('is-active',i===0);w.classList.remove('is-leaving')});wordIndex=0;return}if(document.hidden||!heroVisible)return;wordTimer=setTimeout(()=>{if(!document.hidden){const old=rotatingWords[wordIndex];old.classList.remove('is-active');old.classList.add('is-leaving');wordIndex=(wordIndex+1)%rotatingWords.length;rotatingWords[wordIndex].classList.remove('is-leaving');rotatingWords[wordIndex].classList.add('is-active');setTimeout(()=>old.classList.remove('is-leaving'),650)}startWordRotation()},5500)}reduced.addEventListener('change',startWordRotation);startWordRotation();
+
+document.addEventListener('visibilitychange',()=>startWordRotation());
+if('IntersectionObserver' in window){const shineObserver=new IntersectionObserver(entries=>entries.forEach(e=>e.target.classList.toggle('motion-offscreen',!e.isIntersecting)));document.querySelectorAll('.btn').forEach(btn=>shineObserver.observe(btn))}
+
+if('IntersectionObserver' in window){new IntersectionObserver(entries=>{heroVisible=entries[0].isIntersecting;startWordRotation()},{threshold:.1}).observe(document.querySelector('.hero h1'))}
+
+// Gently ease section navigation; wheel and touch scrolling remain native.
+let softScrollFrame=0;
+function cancelSoftScroll(){if(softScrollFrame)cancelAnimationFrame(softScrollFrame);softScrollFrame=0;document.documentElement.classList.remove('soft-scroll-active')}
+function softScrollTo(target,hash){
+ cancelSoftScroll();
+ const start=window.scrollY;
+ const header=document.querySelector('header');
+ const end=hash==='#'?0:Math.max(0,target.getBoundingClientRect().top+start-(header?header.offsetHeight:0)-18);
+ const destination=Math.min(end,Math.max(0,document.documentElement.scrollHeight-window.innerHeight));
+ const distance=destination-start;
+ const duration=Math.min(900,Math.max(500,Math.abs(distance)*.22));
+ document.documentElement.classList.add('soft-scroll-active');
+ const finish=()=>{window.scrollTo(0,destination);cancelSoftScroll();if(target){const hadTabIndex=target.hasAttribute('tabindex');if(!hadTabIndex)target.setAttribute('tabindex','-1');target.focus({preventScroll:true});if(!hadTabIndex)target.addEventListener('blur',()=>target.removeAttribute('tabindex'),{once:true})}};
+ if(reduced.matches||Math.abs(distance)<2){finish();return}
+ const began=performance.now();
+ const tick=now=>{if(reduced.matches){finish();return}const progress=Math.min(1,(now-began)/duration);const eased=1-Math.pow(1-progress,3);window.scrollTo(0,start+distance*eased);if(progress<1)softScrollFrame=requestAnimationFrame(tick);else finish()};
+ softScrollFrame=requestAnimationFrame(tick);
+}
+document.addEventListener('click',event=>{
+ const anchor=event.target.closest('a[href^="#"]');
+ if(!anchor||event.defaultPrevented||event.button!==0||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey||anchor.hasAttribute('download')||anchor.target==='_blank')return;
+ const hash=anchor.getAttribute('href');let target=null;
+ try{target=hash==='#'?document.querySelector('main'):document.getElementById(decodeURIComponent(hash.slice(1)))}catch{return}
+ if(!target)return;event.preventDefault();if(location.hash!==hash)history.pushState(null,'',hash);softScrollTo(target,hash);
+});
+window.addEventListener('wheel',cancelSoftScroll,{passive:true});
+window.addEventListener('touchstart',cancelSoftScroll,{passive:true});
+document.addEventListener('keydown',event=>{if(['ArrowDown','ArrowUp','PageDown','PageUp','Home','End','Escape',' '].includes(event.key))cancelSoftScroll()});
