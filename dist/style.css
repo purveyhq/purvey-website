@@ -160,3 +160,6 @@ html.page-glide-active{scroll-behavior:auto!important}
 .steps h3{font-weight:600}
 @media(min-width:761px){.business-tools #tool-panel[aria-labelledby="tab-payments"] .tool-illustration{width:80%}}
 @media(max-width:760px){.hero-stage .hero-notification{right:8px;top:50%;bottom:auto}}
+
+/* Decorative arrows on signup and pricing calls to action. */
+.cta-arrow{display:inline-block;width:16px;height:16px;margin-left:8px;flex-shrink:0;vertical-align:-2px;pointer-events:none}
