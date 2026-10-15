@@ -1,0 +1,37 @@
+/* Scoped privacy controls; inherit the marketing site's typography. */
+#purvey-cookie-controls{color:#09093b;font-family:'Source Sans 3',sans-serif;font-size:16px;line-height:1.5}
+.cookie-banner[hidden]{display:none!important}
+.cookie-banner{position:fixed;z-index:1000;left:24px;bottom:max(24px,env(safe-area-inset-bottom));width:calc(100% - 48px);max-width:460px;background:#fff;border:1px solid #e8eaf0;border-radius:20px;padding:26px;box-shadow:0 12px 48px #09093b1a;max-height:calc(100dvh - 32px);overflow:auto}
+#purvey-cookie-controls .cookie-eyebrow{display:block;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#606576;margin-bottom:10px}
+#purvey-cookie-controls h2{font-family:'Sora',sans-serif;font-size:23px;font-weight:600;line-height:1.25;letter-spacing:-.035em;margin:0 0 12px;color:#09093b}
+#purvey-cookie-controls p{font-size:16px;line-height:1.5;color:#606576;margin:0}
+.cookie-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}
+#purvey-cookie-controls button{font-family:inherit;font-size:15px;font-weight:600;line-height:1.25;cursor:pointer}
+.cookie-button{border:1px solid transparent;border-radius:12px;min-height:46px;padding:12px 16px;transition:background .15s ease,color .15s ease}
+.cookie-accept{background:#09093b;color:#fff}.cookie-accept:hover{background:#171754}
+.cookie-reject{background:#fff;color:#09093b;border-color:#cbd0db}.cookie-reject:hover{background:#f4f7fa}
+.cookie-preferences{grid-column:1/-1;justify-self:center;background:none;border:0;padding:8px 12px;color:#09093b;text-decoration:underline;text-underline-offset:4px}
+.cookie-preferences:hover,.cookie-footer-link:hover{color:#18777b}
+#purvey-cookie-controls :is(button,input,summary):focus-visible{outline:3px solid #159aa3;outline-offset:4px}
+.cookie-dialog{color:#09093b;width:calc(100% - 32px);max-width:560px;max-height:calc(100dvh - 32px);overflow:auto;overscroll-behavior:contain;border:1px solid #e8eaf0;border-radius:20px;padding:28px;background:#fff;box-shadow:0 24px 80px #09093b29}
+.cookie-dialog::backdrop{background:#09093b66}
+.cookie-dialog-heading{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.cookie-close{display:grid;place-items:center;flex-shrink:0;width:36px;height:36px;background:#f4f7fa;border:0;border-radius:50%;color:#09093b;font-size:26px!important}
+.cookie-category{position:relative;display:flex;align-items:center;gap:18px;padding:20px 0;border-bottom:1px solid #e8eaf0;cursor:pointer}
+.cookie-category:first-of-type{margin-top:8px}.cookie-category>div{flex:1;min-width:0}
+#purvey-cookie-controls h3{font-family:inherit;font-size:16px;font-weight:600;letter-spacing:0;line-height:1.4;margin:0 0 5px;color:#09093b}
+#purvey-cookie-controls .cookie-category p{font-size:14px}
+.cookie-always{font-size:12px;font-weight:600;color:#606576;white-space:nowrap}
+.cookie-category input{position:absolute;right:0;width:44px;height:26px;opacity:0;margin:0;cursor:pointer}
+.cookie-switch{width:44px;height:26px;flex-shrink:0;border-radius:20px;background:#d4d8e1;border:1px solid #8d94a5;pointer-events:none}
+.cookie-switch::after{content:'';display:block;width:18px;height:18px;border-radius:50%;margin:3px;background:#fff;box-shadow:0 1px 3px #09093b22;transition:transform .15s ease}
+.cookie-category input:checked+.cookie-switch{background:#58dce0;border-color:#18777b}
+.cookie-category input:checked+.cookie-switch::after{background:#09093b;transform:translateX(18px)}
+.cookie-category input:focus-visible+.cookie-switch{outline:3px solid #159aa3;outline-offset:4px}
+.cookie-details{margin-top:20px}.cookie-details summary{cursor:pointer;font-weight:600;font-size:14px;list-style:revert;display:list-item;padding:0;border:0}
+#purvey-cookie-controls .cookie-details p{font-size:14px;margin-top:12px}
+.cookie-dialog-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:24px}
+.legal-links{flex-wrap:wrap}.cookie-footer-link{background:none;border:0;color:inherit;font:inherit;cursor:pointer;padding:4px 0;margin-left:12px}
+.cookie-settings-fallback{position:fixed;bottom:12px;left:12px;z-index:40;background:white;padding:8px 14px;border:1px solid #e8eaf0;border-radius:12px}
+@media(max-width:520px){.cookie-banner{left:12px;bottom:max(12px,env(safe-area-inset-bottom));width:calc(100% - 24px);padding:22px;border-radius:16px}.cookie-dialog{padding:22px;border-radius:16px}.cookie-dialog-actions{display:grid;grid-template-columns:1fr 1fr}.cookie-button{padding:12px 10px}.cookie-category{gap:12px}}
+@media(prefers-reduced-motion:reduce){#purvey-cookie-controls *{transition:none!important}}
