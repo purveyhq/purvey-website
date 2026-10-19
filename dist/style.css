@@ -163,3 +163,29 @@ html.page-glide-active{scroll-behavior:auto!important}
 
 /* Decorative arrows on signup and pricing calls to action. */
 .cta-arrow{display:inline-block;width:16px;height:16px;margin-left:8px;flex-shrink:0;vertical-align:-2px;pointer-events:none}
+
+/* Quiet decorative grid behind the marketing hero. */
+.hero{
+  position:relative;
+  isolation:isolate;
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  pointer-events:none;
+  background-image:
+    linear-gradient(to right,rgba(9,9,59,.055) 1px,transparent 1px),
+    linear-gradient(to bottom,rgba(9,9,59,.055) 1px,transparent 1px);
+  background-size:48px 48px;
+  background-position:center top;
+  -webkit-mask-image:radial-gradient(ellipse 70% 75% at 50% 30%,#000 20%,transparent 85%);
+  mask-image:radial-gradient(ellipse 70% 75% at 50% 30%,#000 20%,transparent 85%);
+}
+@media(max-width:760px){
+  .hero::before{
+    background-size:36px 36px;
+    opacity:.7;
+  }
+}
