@@ -1,11 +1,22 @@
-const prices={monthly:{starter:3500,growth:10000,period:'/month'},quarterly:{starter:9500,growth:27000,period:'/quarter'},yearly:{starter:35000,growth:100000,period:'/year'}};
+const prices={monthly:{starter:3500,growth:10000,period:'/month',months:1},quarterly:{starter:9500,growth:27000,period:'/quarter',months:3},yearly:{starter:35000,growth:100000,period:'/year',months:12}};
 const formatPrice=n=>'₦'+n.toLocaleString('en-NG');
-document.querySelectorAll('input[name="billing"]').forEach(input=>input.addEventListener('change',()=>{
-  const selected=prices[input.value];
+function billingSavings(plan,billing){return prices.monthly[plan]*prices[billing].months-prices[billing][plan]}
+function updateBilling(billing){
+  const selected=prices[billing];
+  if(!selected)return;
+  // Includes the compact sticky header, which shares these data attributes.
   document.querySelectorAll('[data-price]').forEach(el=>{el.textContent=formatPrice(selected[el.dataset.price])});
   document.querySelectorAll('[data-price-period]').forEach(el=>{el.textContent=selected.period});
-  document.querySelector('#billing-status').textContent=input.value+' billing: Starter '+formatPrice(selected.starter)+selected.period+', Growth '+formatPrice(selected.growth)+selected.period+'. Free remains ₦0.';
-}));
+  document.querySelectorAll('[data-savings]').forEach(el=>{
+    const saving=billingSavings(el.dataset.savings,billing);
+    el.hidden=billing==='monthly'||saving<=0;
+    el.querySelector('.savings-badge').textContent=el.hidden?'':'Save '+formatPrice(saving);
+  });
+  const savings=billing==='monthly'?'':' Compared with monthly billing: Starter saves '+formatPrice(billingSavings('starter',billing))+'; Growth saves '+formatPrice(billingSavings('growth',billing))+'.';
+  document.querySelector('#billing-status').textContent=billing+' billing: Starter '+formatPrice(selected.starter)+selected.period+', Growth '+formatPrice(selected.growth)+selected.period+'. Free remains ₦0.'+savings;
+  scheduleHeaderUpdate();
+}
+document.querySelectorAll('input[name="billing"]').forEach(input=>input.addEventListener('change',()=>updateBilling(input.value)));
 const menu=document.querySelector('.menu'),nav=document.querySelector('nav'),mobileMenu=window.matchMedia('(max-width: 760px)');
 function setMenu(open){nav.classList.toggle('open',open);menu.setAttribute('aria-expanded',String(open));menu.setAttribute('aria-label',open?'Close navigation':'Open navigation');nav.inert=mobileMenu.matches&&!open}
 menu.addEventListener('click',()=>setMenu(!nav.classList.contains('open')));
@@ -59,15 +70,12 @@ function scheduleHeaderUpdate(){if(!headerFrame)headerFrame=requestAnimationFram
 comparisonScroller.addEventListener('scroll',scheduleHeaderUpdate,{passive:true});
 window.addEventListener('scroll',scheduleHeaderUpdate,{passive:true});
 window.addEventListener('resize',scheduleHeaderUpdate);
-document.querySelectorAll('input[name="billing"]').forEach(input=>input.addEventListener('change',()=>{
-  headerTable.querySelectorAll('[data-price]').forEach(el=>el.textContent=formatPrice(prices[input.value][el.dataset.price]));
-  headerTable.querySelectorAll('[data-price-period]').forEach(el=>el.textContent=prices[input.value].period);
-  scheduleHeaderUpdate();
-}));
+
 if('ResizeObserver' in window){
   const observer=new ResizeObserver(scheduleHeaderUpdate);
   observer.observe(comparisonScroller);
   observer.observe(document.querySelector('header'));
 }
 document.fonts.ready.then(scheduleHeaderUpdate);
-scheduleHeaderUpdate();
+window.addEventListener('pageshow',()=>updateBilling(document.querySelector('input[name="billing"]:checked').value));
+updateBilling(document.querySelector('input[name="billing"]:checked').value);

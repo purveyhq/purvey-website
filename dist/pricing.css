@@ -21,3 +21,17 @@
 /* Give the introduction room before the plan comparison. */
 .pricing-page .pricing-intro{padding-bottom:96px}
 @media(max-width:760px){.pricing-page .pricing-intro{padding-bottom:72px}}
+
+/* Savings use the same navy/teal palette as the existing plan comparison. */
+.plan-savings{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;margin:-10px 0 18px;font-weight:400}
+.plan-savings[hidden]{display:none}
+.savings-badge{display:inline-block;padding:4px 9px;border:1px solid #ccebed;border-radius:99px;background:#eaf8f9;color:var(--navy);font-size:13px;font-weight:600;line-height:1.3;white-space:nowrap}
+.savings-context{font-size:12px;line-height:1.4;color:var(--muted)}
+.pricing-floating-header .plan-savings{margin:6px 0 0}
+.pricing-floating-header .savings-badge{font-size:11px;padding:3px 7px}
+.pricing-floating-header .savings-context{display:none}
+/* Leave one readable plan beside the sticky labels on narrow phones. */
+@media(max-width:480px){
+  .comparison-scroll .pricing-table{min-width:calc(clamp(128px,38vw,160px) + 474px)}
+  .comparison-scroll .pricing-table .feature-col{width:clamp(128px,38vw,160px)}
+}
