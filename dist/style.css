@@ -204,7 +204,8 @@ html.page-glide-active{scroll-behavior:auto!important}
 .business-tools .tools-workspace{display:block;border:0;border-radius:22px;background:#edf9f8;overflow:hidden;min-width:0}
 .business-tools .tools-tabs{position:relative;display:flex;gap:8px;overflow-x:auto;overscroll-behavior-x:contain;padding:20px 24px 8px;border:0;scrollbar-width:thin;scrollbar-color:#b9dedf transparent}
 .business-tools .tools-tabs button{flex:1 0 auto;width:auto;min-width:0;white-space:nowrap;display:block;border:0;border-radius:12px;padding:15px 19px;background:transparent;text-align:center;color:#344457}
-.business-tools .tools-tabs button span{font-size:17px;font-weight:700;color:inherit}
+.business-tools .tools-tabs button span{font-size:17px;font-weight:500;color:inherit}
+.business-tools .tools-tabs button[aria-selected=true] span{font-weight:700}
 .business-tools .tools-tabs button::before,.business-tools .tools-tabs button::after{display:none}
 .business-tools .tools-tabs button[aria-selected=true]{background:#58dce0;color:#09093b;box-shadow:none}
 .business-tools .tool-scene{min-height:0;position:relative;padding:0;background:transparent;overflow:hidden}
