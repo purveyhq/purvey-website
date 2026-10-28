@@ -17,7 +17,7 @@
 .about-founder-image figcaption strong{font-weight:600}
 .about-founder-image figcaption span{color:var(--about-muted);font-size:14px}
 .about-hero-portrait{border-radius:24px;background:#edeef7;overflow:hidden;aspect-ratio:1.08;min-width:0}
-.about-hero-portrait img{display:block;width:100%;height:100%;object-fit:cover}
+.about-hero-portrait img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 8%}
 .about-section{padding:82px 0}
 .about-story{display:grid;grid-template-columns:.65fr 1.35fr;gap:92px;align-items:start;border-top:1px solid #e5eaf0}
 .about-story>h2{max-width:310px}
