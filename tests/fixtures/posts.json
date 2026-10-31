@@ -1,0 +1,810 @@
+[
+  {
+    "_id": "local-layout-0",
+    "title": "A clearer picture of your everyday business",
+    "slug": "a-clearer-picture",
+    "excerpt": "Meet the tools for checking payments, customer history, your business overview and promotions.",
+    "category": "Purvey updates",
+    "publishedAt": "2026-10-31T12:00:00Z",
+    "_updatedAt": "2026-10-31T12:00:00Z",
+    "coverImage": {
+      "asset": {
+        "_ref": "image-0000000000000000-1400x900-jpg"
+      },
+      "alt": "Local layout illustration"
+    },
+    "body": [
+      {
+        "_type": "block",
+        "_key": "b0",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "s",
+            "text": "Selling through social media brings customers into the conversation. Keeping product information and order records organised helps you manage what happens next.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "b1",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "s",
+            "text": "Start with the everyday task",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "b2",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "s",
+            "text": "Meet the tools for checking payments, customer history, your business overview and promotions. Begin by looking at how you handle this part of your business today. Keep the information you need in one place and check it regularly.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "b3",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "s",
+            "text": "Keep your information accurate",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "b4",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "s",
+            "text": "Clear product details, current stock records and up-to-date orders make everyday decisions easier. Review changes before sharing information with a customer.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "b5",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "s",
+            "text": "Walk through the experience as a customer. Look for missing information before you share your store.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "b6",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "s",
+            "text": "Build a routine you can maintain",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "b7",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "s",
+            "text": "Choose a straightforward process that works for your business. Check your records as part of preparing orders and make updates while the details are fresh.",
+            "marks": []
+          }
+        ]
+      }
+    ],
+    "_localPreviewImage": "/assets/blog/overview.svg"
+  },
+  {
+    "_id": "local-layout-1",
+    "title": "Before you run a discount, check these four things",
+    "slug": "before-you-run-a-discount",
+    "excerpt": "A little planning helps you offer a promotion that makes sense for your products and margins.",
+    "category": "Managing your business",
+    "publishedAt": "2026-10-31T12:00:00Z",
+    "_updatedAt": "2026-10-31T12:00:00Z",
+    "coverImage": {
+      "asset": {
+        "_ref": "image-0000000000000001-1400x900-jpg"
+      },
+      "alt": "Local layout illustration"
+    },
+    "body": [
+      {
+        "_type": "block",
+        "_key": "b0",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "s",
+            "text": "Selling through social media brings customers into the conversation. Keeping product information and order records organised helps you manage what happens next.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "b1",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "s",
+            "text": "Start with the everyday task",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "b2",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "s",
+            "text": "A little planning helps you offer a promotion that makes sense for your products and margins. Begin by looking at how you handle this part of your business today. Keep the information you need in one place and check it regularly.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "b3",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "s",
+            "text": "Keep your information accurate",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "b4",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "s",
+            "text": "Clear product details, current stock records and up-to-date orders make everyday decisions easier. Review changes before sharing information with a customer.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "b5",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "s",
+            "text": "Walk through the experience as a customer. Look for missing information before you share your store.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "b6",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "s",
+            "text": "Build a routine you can maintain",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "b7",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "s",
+            "text": "Choose a straightforward process that works for your business. Check your records as part of preparing orders and make updates while the details are fresh.",
+            "marks": []
+          }
+        ]
+      }
+    ],
+    "_localPreviewImage": "/assets/blog/promotion.svg"
+  },
+  {
+    "_id": "local-layout-2",
+    "title": "From chat to checkout: give your products a home online",
+    "slug": "from-chats-to-storefront",
+    "excerpt": "A practical guide to creating a storefront your customers can browse, shop and come back to.",
+    "category": "Selling online",
+    "publishedAt": "2026-10-31T12:00:00Z",
+    "_updatedAt": "2026-10-31T12:00:00Z",
+    "coverImage": {
+      "asset": {
+        "_ref": "image-0000000000000002-1400x900-jpg"
+      },
+      "alt": "Local layout illustration"
+    },
+    "body": [
+      {
+        "_type": "block",
+        "_key": "b0",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "s",
+            "text": "Selling through social media brings customers into the conversation. Keeping product information and order records organised helps you manage what happens next.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "b1",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "s",
+            "text": "Give customers somewhere to browse",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "b2",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "s",
+            "text": "You can keep sharing products on WhatsApp and Instagram while giving customers one place to see what is available. A storefront brings your product pictures, prices and descriptions together, so each conversation does not have to start from scratch.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "b3",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "s",
+            "text": "Start with clear product information",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "b4",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "s",
+            "text": "Choose a small set of products to list first. Add accurate prices, useful descriptions and photographs that show what a customer will receive. If a product comes in different sizes or colours, make those choices clear and keep stock records up to date.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "b5",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "s",
+            "text": "Walk through the experience as a customer. Look for missing information before you share your store.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "b6",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "s",
+            "text": "Make the next step easy",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "b7",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "s",
+            "text": "Share your store link in your social profiles and with customers who ask for your catalogue. Check the store on your own phone before sharing it: can you find a product, understand the delivery options and follow the checkout steps?",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "b8",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "s",
+            "text": "Keep your daily work connected",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "b9",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "s",
+            "text": "Review orders and their payment status before preparing a delivery. Update fulfilment as an order moves forward, and use customer history when someone returns. A storefront is most useful when the records behind it stay organised.",
+            "marks": []
+          }
+        ]
+      }
+    ],
+    "_localPreviewImage": "/assets/blog/merchant-packing.jpg"
+  },
+  {
+    "_id": "local-layout-3",
+    "title": "Paid orders and bank settlements: know the difference",
+    "slug": "paid-orders-and-settlements",
+    "excerpt": "Understand what a successful payment means and where to check what happens next.",
+    "category": "Merchant guides",
+    "publishedAt": "2026-10-31T12:00:00Z",
+    "_updatedAt": "2026-10-31T12:00:00Z",
+    "coverImage": {
+      "asset": {
+        "_ref": "image-0000000000000003-1400x900-jpg"
+      },
+      "alt": "Local layout illustration"
+    },
+    "body": [
+      {
+        "_type": "block",
+        "_key": "b0",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "s",
+            "text": "Selling through social media brings customers into the conversation. Keeping product information and order records organised helps you manage what happens next.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "b1",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "s",
+            "text": "Start with the everyday task",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "b2",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "s",
+            "text": "Understand what a successful payment means and where to check what happens next. Begin by looking at how you handle this part of your business today. Keep the information you need in one place and check it regularly.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "b3",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "s",
+            "text": "Keep your information accurate",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "b4",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "s",
+            "text": "Clear product details, current stock records and up-to-date orders make everyday decisions easier. Review changes before sharing information with a customer.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "b5",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "s",
+            "text": "Walk through the experience as a customer. Look for missing information before you share your store.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "b6",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "s",
+            "text": "Build a routine you can maintain",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "b7",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "s",
+            "text": "Choose a straightforward process that works for your business. Check your records as part of preparing orders and make updates while the details are fresh.",
+            "marks": []
+          }
+        ]
+      }
+    ],
+    "_localPreviewImage": "/assets/blog/payments.svg"
+  },
+  {
+    "_id": "local-layout-4",
+    "title": "What customers need to see in your product photos",
+    "slug": "product-photos-that-help-customers",
+    "excerpt": "Make it easier for someone to understand your product before they ask you another question.",
+    "category": "Merchant guides",
+    "publishedAt": "2026-10-31T12:00:00Z",
+    "_updatedAt": "2026-10-31T12:00:00Z",
+    "coverImage": {
+      "asset": {
+        "_ref": "image-0000000000000004-1400x900-jpg"
+      },
+      "alt": "Local layout illustration"
+    },
+    "body": [
+      {
+        "_type": "block",
+        "_key": "b0",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "s",
+            "text": "Selling through social media brings customers into the conversation. Keeping product information and order records organised helps you manage what happens next.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "b1",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "s",
+            "text": "Start with the everyday task",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "b2",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "s",
+            "text": "Make it easier for someone to understand your product before they ask you another question. Begin by looking at how you handle this part of your business today. Keep the information you need in one place and check it regularly.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "b3",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "s",
+            "text": "Keep your information accurate",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "b4",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "s",
+            "text": "Clear product details, current stock records and up-to-date orders make everyday decisions easier. Review changes before sharing information with a customer.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "b5",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "s",
+            "text": "Walk through the experience as a customer. Look for missing information before you share your store.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "b6",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "s",
+            "text": "Build a routine you can maintain",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "b7",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "s",
+            "text": "Choose a straightforward process that works for your business. Check your records as part of preparing orders and make updates while the details are fresh.",
+            "marks": []
+          }
+        ]
+      }
+    ],
+    "_localPreviewImage": "/assets/blog/photos.svg"
+  },
+  {
+    "_id": "local-layout-5",
+    "title": "Same product. Different sizes. Stock you can keep track of.",
+    "slug": "stock-by-size-and-colour",
+    "excerpt": "Keep each variation organised, so you know what is available before you promise it to a customer.",
+    "category": "Managing your business",
+    "publishedAt": "2026-10-31T12:00:00Z",
+    "_updatedAt": "2026-10-31T12:00:00Z",
+    "coverImage": {
+      "asset": {
+        "_ref": "image-0000000000000005-1400x900-jpg"
+      },
+      "alt": "Local layout illustration"
+    },
+    "body": [
+      {
+        "_type": "block",
+        "_key": "b0",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "s",
+            "text": "Selling through social media brings customers into the conversation. Keeping product information and order records organised helps you manage what happens next.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "b1",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "s",
+            "text": "Start with the everyday task",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "b2",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "s",
+            "text": "Keep each variation organised, so you know what is available before you promise it to a customer. Begin by looking at how you handle this part of your business today. Keep the information you need in one place and check it regularly.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "b3",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "s",
+            "text": "Keep your information accurate",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "b4",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "s",
+            "text": "Clear product details, current stock records and up-to-date orders make everyday decisions easier. Review changes before sharing information with a customer.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "b5",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "s",
+            "text": "Walk through the experience as a customer. Look for missing information before you share your store.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "b6",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "s",
+            "text": "Build a routine you can maintain",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "b7",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "s",
+            "text": "Choose a straightforward process that works for your business. Check your records as part of preparing orders and make updates while the details are fresh.",
+            "marks": []
+          }
+        ]
+      }
+    ],
+    "_localPreviewImage": "/assets/blog/inventory.svg"
+  }
+]

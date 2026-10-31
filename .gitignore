@@ -1,0 +1,6 @@
+node_modules/
+build/
+.preview/
+.env*
+!.env.example
+design-review/
