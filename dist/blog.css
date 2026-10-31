@@ -17,6 +17,8 @@
 /* Sanity article content uses semantic rich text, including lists and images. */
 [data-article-content]>p,[data-article-content]>ul,[data-article-content]>ol,[data-article-content]>blockquote{margin-bottom:24px}
 [data-article-content]>h2,[data-article-content]>h3{scroll-margin-top:120px;margin-top:36px}
+[data-article-content] h2{font-size:24px}
+@media(max-width:760px){[data-article-content] h2{font-size:22px}}
 [data-article-content] h3{font:600 22px/1.4 'Sora',sans-serif;color:var(--navy);margin-bottom:16px}
 [data-article-content] ul,[data-article-content] ol{padding-left:1.4em}
 [data-article-content] li+li{margin-top:8px}
