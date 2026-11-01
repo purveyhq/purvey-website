@@ -1,4 +1,9 @@
 (() => {
+ document.querySelectorAll('[data-author-avatar]').forEach(img=>{
+  const fallback=()=>img.remove();
+  img.addEventListener('error',fallback,{once:true});
+  if(img.complete&&img.naturalWidth===0)fallback();
+ });
  const search = document.querySelector('#blog-search');
  const filters = [...document.querySelectorAll('[data-filter]')];
  let category = new URLSearchParams(location.search).get('category') || 'All articles';

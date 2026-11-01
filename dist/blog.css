@@ -14,6 +14,8 @@
 /* Keep swipeable categories visually quiet on all mobile widths. */
 @media(max-width:760px){.blog-filters{-ms-overflow-style:none;scrollbar-width:none}.blog-filters::-webkit-scrollbar{display:none;width:0;height:0}}
 .article-byline strong,.article-end strong,.blog-author{font-weight:600}
+.article-byline .author-mark{position:relative;overflow:hidden;flex-shrink:0}
+.article-byline .author-avatar{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;border-radius:inherit}
 /* Sanity article content uses semantic rich text, including lists and images. */
 [data-article-content]>p,[data-article-content]>ul,[data-article-content]>ol,[data-article-content]>blockquote{margin-bottom:24px}
 [data-article-content]>h2,[data-article-content]>h3{scroll-margin-top:120px;margin-top:36px}

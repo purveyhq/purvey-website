@@ -77,7 +77,7 @@ Only after the code and hook are approved and configured:
 2. Save it as a draft. Confirm it does **not** appear on the public listing.
 3. Publish it. Confirm a Sanity webhook delivery and a new Vercel deployment.
 4. Wait for deployment to become Ready. Open `/blog/`, click the article, and reload the detail URL directly.
-5. Check phone and desktop layouts, cover crop, author PurveyHq, calculated reading time, share icons, copy link, reading progress and table-of-contents links.
+5. Check phone and desktop layouts, cover crop, the published author name, calculated reading time, share icons, copy link, reading progress and table-of-contents links.
 6. Check the article HTML contains its content, canonical URL, description, sharing metadata and BlogPosting JSON-LD; confirm its URL is in `/sitemap.xml`.
 7. Publish a small edit. Confirm the rebuild shows it.
 8. Unpublish a disposable test article. Confirm a rebuild removes its card, article file and sitemap entry. Do not unpublish a real article just for this test.

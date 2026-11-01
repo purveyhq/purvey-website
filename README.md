@@ -51,7 +51,8 @@ These values are also declared in `vercel.json`. Remove old dashboard overrides 
 - Project: Purvey Blog (`9o3cppt2`)
 - Dataset: `production`
 - Document type: `post`
-- Author displayed on the website: **PurveyHq**
+- Author: the published Sanity **Author** field; defaults to **PurveyHq** when blank.
+- Optional **Author photo**: a circular article byline portrait with crop/hotspot support; the author initial remains the fallback when absent or unavailable.
 - Published posts only. Drafts and release versions are excluded.
 - The article date is a display date, not a publishing scheduler.
 - Reading time is calculated from article text at 200 words per minute.

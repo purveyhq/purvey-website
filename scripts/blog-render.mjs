@@ -5,6 +5,21 @@ import {sanityConfig, siteURL} from './blog-config.mjs';
 export const esc = (value) => escapeHTML(String(value ?? ''));
 const imageBuilder = createImageUrlBuilder(sanityConfig);
 export const articleURL = (post) => `/blog/${post.slug}/`;
+export const authorName = (post) => typeof post.author === 'string' && post.author.trim() ? post.author.trim() : 'PurveyHq';
+export function authorAvatar(post) {
+  const initial = esc(Array.from(authorName(post))[0].toUpperCase());
+  let photo = '';
+  if (post.authorImage?.asset?._ref) {
+    try {
+      const src = esc(imageURL(post.authorImage, 74, 74));
+      const src2x = esc(imageURL(post.authorImage, 148, 148));
+      photo = `<img class="author-avatar" data-author-avatar src="${src}" srcset="${src} 1x, ${src2x} 2x" alt="" width="37" height="37" decoding="async">`;
+    } catch {
+      // A missing or invalid optional photo must not prevent publishing.
+    }
+  }
+  return `<span class="author-mark" aria-hidden="true">${initial}${photo}</span>`;
+}
 const words = (text) => text.match(/[\p{L}\p{N}]+(?:[’'-][\p{L}\p{N}]+)*/gu) || [];
 export const blockText = (block) => (block.children || []).map((span) => span.text || '').join('');
 export const readingMinutes = (body) => Math.max(1, Math.ceil(words(body.filter((b) => b._type === 'block').map(blockText).join(' ')).length / 200));
@@ -97,7 +112,7 @@ export function renderBody(body) {
 const dateFormat = (date, long = false) => new Intl.DateTimeFormat('en-GB', {day: 'numeric', month: long ? 'long' : 'short', year: 'numeric', timeZone: 'Africa/Lagos'}).format(new Date(date));
 export function renderCard(post) {
   const href = articleURL(post);
-  return `<article class="blog-card" data-category="${esc(post.category)}" data-search="${esc(`${post.title} ${post.excerpt} ${post.category}`.toLowerCase())}"><a class="cover-link" href="${href}">${imageHTML(post.coverImage, {card: true})}</a><div class="card-meta"><span class="category-pill">${esc(post.category)}</span><span data-reading-time>${post.minutes} min read</span></div><h3><a href="${href}">${esc(post.title)}</a></h3><p>${esc(post.excerpt)}</p><div class="card-bottom"><span><span class="blog-author">PurveyHq</span> · <time datetime="${esc(post.publishedAt)}">${dateFormat(post.publishedAt)}</time></span><a class="read-article" href="${href}" aria-label="Read article: ${esc(post.title)}">Read article</a></div></article>`;
+  return `<article class="blog-card" data-category="${esc(post.category)}" data-search="${esc(`${post.title} ${post.excerpt} ${post.category}`.toLowerCase())}"><a class="cover-link" href="${href}">${imageHTML(post.coverImage, {card: true})}</a><div class="card-meta"><span class="category-pill">${esc(post.category)}</span><span data-reading-time>${post.minutes} min read</span></div><h3><a href="${href}">${esc(post.title)}</a></h3><p>${esc(post.excerpt)}</p><div class="card-bottom"><span><span class="blog-author">${esc(authorName(post))}</span> · <time datetime="${esc(post.publishedAt)}">${dateFormat(post.publishedAt)}</time></span><a class="read-article" href="${href}" aria-label="Read article: ${esc(post.title)}">Read article</a></div></article>`;
 }
 
 function jsonLD(value) {
@@ -110,7 +125,9 @@ export function pageHead({title, description, path, image, post, preview = false
     '@context': 'https://schema.org', '@type': 'BlogPosting', headline: post.title,
     description, image: imageSrc, datePublished: post.publishedAt,
     dateModified: post._updatedAt || post.publishedAt,
-    author: {'@type': 'Organization', name: 'PurveyHq', url: siteURL},
+    author: /^purvey(?:hq| team)?$/i.test(authorName(post))
+      ? {'@type': 'Organization', name: authorName(post), url: siteURL}
+      : {'@type': 'Person', name: authorName(post)},
     publisher: {'@type': 'Organization', name: 'Purvey', url: siteURL},
     mainEntityOfPage: canonical, wordCount: words(post.body.filter((b) => b._type === 'block').map(blockText).join(' ')).length,
     timeRequired: `PT${post.minutes}M`,
@@ -148,6 +165,7 @@ export function renderArticle(template, post, allPosts, preview = false) {
   return fill(template, {
     HEAD: pageHead({title: `${post.title} | Purvey Blog`, description: post.seoDescription || post.excerpt, path: articleURL(post), image: imageURL(post.coverImage, 1200, 630), post, preview}),
     PREVIEW_NOTE: preview ? '<div class="preview-note">Design preview · Local layout fixtures only</div>' : '',
+    AUTHOR: esc(authorName(post)), AUTHOR_AVATAR: authorAvatar(post),
     CATEGORY_QUERY: encodeURIComponent(post.category), CATEGORY: esc(post.category), TITLE: esc(post.title), EXCERPT: esc(post.excerpt),
     DATE_ISO: esc(post.publishedAt), DATE_LONG: dateFormat(post.publishedAt, true), MINUTES: post.minutes,
     COVER: imageHTML(post.coverImage, {cover: true}), CAPTION: post.coverImage.caption ? `<figcaption>${esc(post.coverImage.caption)}</figcaption>` : '',

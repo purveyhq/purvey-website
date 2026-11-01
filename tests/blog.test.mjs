@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile, writeFile, rm} from 'node:fs/promises';
 import {spawnSync} from 'node:child_process';
-import {validatePosts, renderBody, renderListing, renderArticle, readingMinutes, safeLink, imageURL} from '../scripts/blog-render.mjs';
+import {validatePosts, renderBody, renderListing, renderArticle, readingMinutes, safeLink, imageURL, authorAvatar} from '../scripts/blog-render.mjs';
 import {postsQuery, sanityConfig} from '../scripts/blog-config.mjs';
 
 const fixtures = JSON.parse(await readFile(new URL('./fixtures/posts.json', import.meta.url), 'utf8'));
@@ -95,6 +95,45 @@ test('empty and single-post blogs work without fictional fallback cards or dead 
   assert.doesNotMatch(single, /class="related"/);
   const noHeadings = {...posts[0], body: [block('Short article.')]};
   assert.match(renderArticle(article, noHeadings, [noHeadings]), /<details open hidden>/);
+});
+
+test('published author names appear in listing, related cards, byline and SEO without markup injection', () => {
+  assert.match(postsQuery, /\bauthor\b/);
+  const named = {...posts[0], author: '  Lanre Malumi  '};
+  const other = {...posts[1], author: 'Another writer'};
+  const html = renderArticle(article, named, [named, other]);
+  assert.equal((html.match(/<strong>Lanre Malumi<\/strong>/g) || []).length, 2);
+  assert.match(html, /"author":\{"@type":"Person","name":"Lanre Malumi"\}/);
+  assert.match(html, /class="author-mark" aria-hidden="true">L<\/span>/);
+  assert.match(html, /class="blog-author">Another writer<\/span>/);
+  assert.match(renderListing(listing, [named]), /class="blog-author">Lanre Malumi<\/span>/);
+  assert.match(renderArticle(article, {...named, author: 'Purvey Team'}, []), /"author":\{"@type":"Organization","name":"Purvey Team"/);
+  for (const author of [undefined, null, '', '   ']) {
+    assert.match(renderArticle(article, {...named, author}, []), /<strong>PurveyHq<\/strong>/);
+  }
+  const unsafe = {...named, author: '<script>alert(1)</script>'};
+  const escaped = renderArticle(article, unsafe, []);
+  assert.doesNotMatch(escaped, /<script>alert\(1\)<\/script>/);
+  assert.match(escaped, /&lt;script&gt;alert\(1\)&lt;\/script&gt;/);
+});
+
+test('optional author portraits use cropped responsive images and retain an accessible initial fallback', () => {
+  assert.match(postsQuery, /\bauthorImage\b/);
+  const named = {...posts[0], author: 'Lanre Malumi'};
+  const fallback = authorAvatar(named);
+  assert.match(fallback, /aria-hidden="true">L<\/span>/);
+  assert.doesNotMatch(fallback, /<img/);
+  assert.equal(authorAvatar({...named, authorImage: null}), fallback);
+  assert.equal(authorAvatar({...named, authorImage: {asset: {_ref: 'invalid'}}}), fallback);
+  const withPhoto = {...named, authorImage: {...named.coverImage, hotspot: {x: 0.7, y: 0.3, width: 0.2, height: 0.2}, crop: {left: 0.1, right: 0.1, top: 0, bottom: 0}}};
+  const portrait = authorAvatar(withPhoto);
+  assert.match(portrait, /data-author-avatar/);
+  assert.match(portrait, /w=74/);
+  assert.match(portrait, /h=74/);
+  assert.match(portrait, /w=148/);
+  assert.match(portrait, /rect=/);
+  assert.match(portrait, /alt="" width="37" height="37"/);
+  assert.match(renderArticle(article, withPhoto, []), /<strong>Lanre Malumi<\/strong>/);
 });
 
 test('full fixture build removes stale articles, preserves previous output on failure and is blocked on Vercel', async () => {

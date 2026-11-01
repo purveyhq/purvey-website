@@ -10,5 +10,5 @@ export const sanityConfig = {
 };
 export const postsQuery = `*[_type == "post" && !(_id in path("drafts.**")) && !(_id in path("versions.**"))] | order(publishedAt desc, _id asc) {
   _id, _updatedAt, title, "slug": slug.current, excerpt, category,
-  publishedAt, seoDescription, coverImage, body
+  publishedAt, author, authorImage, seoDescription, coverImage, body
 }`;
