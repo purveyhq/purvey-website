@@ -24,11 +24,6 @@ nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenu(fals
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&nav.classList.contains('open')){setMenu(false);menu.focus()}});
 document.addEventListener('click',e=>{if(mobileMenu.matches&&!nav.contains(e.target)&&!menu.contains(e.target))setMenu(false)});
 mobileMenu.addEventListener('change',()=>setMenu(false));setMenu(false);
-const legalDialog=document.querySelector('#legal-dialog');
-document.querySelectorAll('[data-legal]').forEach(b=>b.addEventListener('click',()=>{document.querySelector('#legal-heading').textContent=b.dataset.legal;legalDialog.showModal()}));
-document.querySelector('.close-legal').addEventListener('click',()=>legalDialog.close());
-document.querySelector('#legal-done').addEventListener('click',()=>legalDialog.close());
-
 // A compact header outside the horizontal overflow container follows page
 // scrolling. It mirrors the real header, preserving the semantic table below.
 const comparisonScroller=document.querySelector('.comparison-scroll');

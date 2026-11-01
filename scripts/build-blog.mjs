@@ -4,6 +4,7 @@ import path from 'node:path';
 import {createClient} from '@sanity/client';
 import {sanityConfig, postsQuery, siteURL} from './blog-config.mjs';
 import {validatePosts, renderListing, renderArticle, articleURL, esc} from './blog-render.mjs';
+import {writeLegalPages} from './legal-render.mjs';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const fixtureArg = process.argv.find((arg) => arg.startsWith('--fixture='));
@@ -30,6 +31,7 @@ try {
   const listing = localArtwork(renderListing(listTemplate, posts, preview));
   const articles = posts.map((post) => ({post, html: localArtwork(renderArticle(articleTemplate, post, posts, preview))}));
   await cp(path.join(root, 'dist'), staging, {recursive: true, filter: (source) => source !== path.join(root, 'dist/blog')});
+  const legalURLs = await writeLegalPages(root, staging);
   await mkdir(path.join(staging, 'blog'), {recursive: true});
   await writeFile(path.join(staging, 'blog/index.html'), listing);
   for (const {post, html} of articles) {
@@ -37,8 +39,8 @@ try {
     await mkdir(folder, {recursive: true});
     await writeFile(path.join(folder, 'index.html'), html);
   }
-  const baseEntries = [...originalSitemap.matchAll(/<url>.*?<loc>(.*?)<\/loc>.*?<\/url>/gs)].filter((m) => !new URL(m[1]).pathname.startsWith('/blog/')).map((m) => m[0]);
-  const entries = [`<url><loc>${siteURL}/blog/</loc></url>`, ...posts.map((p) => `<url><loc>${siteURL}${articleURL(p)}</loc><lastmod>${esc(p._updatedAt || p.publishedAt)}</lastmod></url>`)];
+  const baseEntries = [...originalSitemap.matchAll(/<url>.*?<loc>(.*?)<\/loc>.*?<\/url>/gs)].filter((m) => { const pathname = new URL(m[1]).pathname; return !pathname.startsWith('/blog/') && !['/terms/', '/privacy-policy/'].includes(pathname); }).map((m) => m[0]);
+  const entries = [`<url><loc>${siteURL}/blog/</loc></url>`, ...legalURLs.map((url) => `<url><loc>${siteURL}${url}</loc></url>`), ...posts.map((p) => `<url><loc>${siteURL}${articleURL(p)}</loc><lastmod>${esc(p._updatedAt || p.publishedAt)}</lastmod></url>`)];
   await writeFile(path.join(staging, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${[...baseEntries, ...entries].join('\n')}\n</urlset>\n`);
   if (preview) await writeFile(path.join(staging, 'robots.txt'), 'User-agent: *\nDisallow: /\n');
   await rm(output, {recursive: true, force: true});

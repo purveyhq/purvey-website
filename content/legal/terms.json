@@ -1,0 +1,80 @@
+{
+  "title": "Terms of use",
+  "path": "/terms/",
+  "status": "approved",
+  "updated": "2026-11-01",
+  "description": "The terms for using Purvey's website, commerce tools and hosted storefronts, including accounts, subscriptions and merchant responsibilities.",
+  "intro": "The terms for running a store, shopping on Purvey-hosted storefronts and using our services.",
+  "sections": [
+    {
+      "id": "about-these-terms",
+      "title": "About these terms",
+      "body": "<p>Purvey is operated by Secern Technologies Limited, RC 7508148, a company registered in Nigeria. In these terms, “Purvey”, “we”, “us” and “our” refer to Secern Technologies Limited.</p><p>These terms cover our marketing website, merchant application and Purvey-hosted storefront services. They apply to visitors, merchants, authorised staff and customers where relevant to their use of those services. Our <a href=\"/privacy-policy/\">Privacy Policy</a> explains how personal information is handled.</p><p>Please read these terms before creating an account or using the services. If you act for a business, you must have authority to do so. Contact <a href=\"mailto:support@purveyhq.com\">support@purveyhq.com</a> if you have a question about them.</p>"
+    },
+    {
+      "id": "what-purvey-provides",
+      "title": "What Purvey provides",
+      "body": "<p>Purvey provides tools for creating a storefront and managing products, stock, orders, customers and payment records. Features and limits depend on your plan and the services available to your account.</p><p>Purvey is a software platform. A merchant remains the seller of the products listed in their store. We do not manufacture, own or fulfil those products merely because a merchant uses Purvey.</p><p>We do not guarantee a particular number of visitors, orders, sales or business results. Our published plans and feature descriptions explain what is included; a future feature is not included unless it is made available.</p>"
+    },
+    {
+      "id": "accounts-and-access",
+      "title": "For merchants: accounts and staff access",
+      "body": "<p>You must have the legal capacity and authority required to use the services and operate the business you register. Keep your account, business and contact information accurate.</p><p>Keep your sign-in details private. Only give staff access they are authorised to have, and review access when their responsibilities change. You are responsible for activity you authorise through your account. Tell us promptly if you suspect unauthorised access.</p><p>Do not impersonate another person or business, use someone else's identity documents or bank details without lawful authority, or attempt to access another merchant's records.</p>"
+    },
+    {
+      "id": "merchant-responsibilities",
+      "title": "For merchants: running your store",
+      "body": "<p>You are responsible for the business you conduct through your store, including:</p><ul><li>The legality, safety, availability and accuracy of your products and listings.</li><li>Clear prices, product descriptions, delivery information and applicable charges.</li><li>Keeping stock, order and fulfilment records accurate.</li><li>Customer communication, delivery, returns, refunds, complaints and any warranties you provide or are legally required to honour.</li><li>Applicable taxes, registrations, licences and other obligations relating to your business.</li><li>Having the right to use the names, photographs, descriptions and other material you upload.</li></ul><p>Provide customers with your delivery, returns and refund policies before they buy. Your store policies must respect applicable law and cannot remove a customer's mandatory rights.</p>"
+    },
+    {
+      "id": "shopping-and-customer-support",
+      "title": "For customers: shopping and getting help",
+      "body": "<p>When you buy from a Purvey-hosted storefront, the merchant is the seller and is responsible for the products, delivery and after-sales service. Check the product details, total price, delivery information and the merchant’s returns and refund policies before ordering.</p><p>Provide accurate contact and delivery details, and keep your order and payment references. Protect your sign-in details if you create a customer account. Do not submit false orders, payment evidence or reviews.</p><p>Contact the merchant first about a product, delivery, cancellation or refund. Cancelling an order does not automatically issue a refund. Any refund remains subject to applicable consumer rights and the relevant payment process.</p><p>For a problem with Purvey’s platform, or help identifying the store involved, email <a href=\"mailto:support@purveyhq.com\">support@purveyhq.com</a>. Do not send passwords, full card details or identity numbers. These terms do not remove your right to seek a remedy from a payment provider, regulator or court where available.</p>"
+    },
+    {
+      "id": "plans-and-billing",
+      "title": "Plans, billing and expiry",
+      "body": "<p>Our <a href=\"/pricing/\">pricing page</a> sets out the available plans, billing intervals, features and limits. Review the plan and total charge shown before paying.</p><p>Purvey offers a Free plan. Eligible new accounts receive 14 days of Growth access, after which they return to Free unless a paid plan is selected. Paid subscriptions are renewed manually; a manual renewal requires another payment.</p><p>When a paid plan expires, the account returns to Free. Paid features and Free-plan limits then apply. Your existing data is not deleted solely because a trial or paid subscription has expired. Account closure and lawful data retention are separate matters, explained in our Privacy Policy.</p><p>A Purvey subscription pays for access to the selected software tools. It is separate from payments customers make to a merchant.</p>"
+    },
+    {
+      "id": "subscription-refunds",
+      "title": "Subscription refunds",
+      "body": "<p>Subscription fees are generally non-refundable once the paid subscription period has begun. Choosing to stop using Purvey, not using all available features, or choosing a different plan does not by itself entitle you to a refund or credit for unused time.</p><p>This policy does not exclude a refund, correction, remedy or other right that applicable law requires. It does not permit Purvey to retain a payment where doing so would be unlawful, including where a remedy is required for failure to provide the paid service.</p><p>If you believe you were charged incorrectly, paid twice, or did not receive the subscription you paid for, contact <a href=\"mailto:support@purveyhq.com\">support@purveyhq.com</a> with your account email and payment reference so we can investigate. Do not email passwords, card security codes, NIN or BVN details.</p><p>This section concerns Purvey subscription fees. Refunds for goods bought from a merchant are handled separately under the merchant's lawful policies, applicable consumer law and the payment provider's dispute processes.</p>"
+    },
+    {
+      "id": "payments-and-verification",
+      "title": "Payments, verification and settlement",
+      "body": "<p>Paystack processes supported online customer payments and settles the proceeds, after processing fees, directly to the merchant's approved bank account. Merchants can track payment and settlement records in Purvey. No withdrawal request is needed.</p><p>Purvey takes no transaction commission. Paystack's processing fees are separate from Purvey subscription fees and are deducted from merchant sales proceeds as applicable.</p><p>Online payment access requires the identity verification and settlement bank setup requested for your account. Raptor provides identity-verification services used in this process. Information you supply must be accurate, and you must have authority to use the bank account you submit.</p><p>Payment providers may require additional review, restrict transactions, request information, or delay or withhold settlement under their rules or applicable law. Verification does not guarantee approval for every payment service. Settlement timing depends on the provider, banks, verification and any applicable restrictions; Purvey does not promise instant payouts or a fixed settlement time.</p><p>Chargebacks, disputed transactions and payment reversals may affect a merchant's proceeds. Merchants must cooperate with lawful information requests and the relevant provider's dispute process. We cannot override a provider's legal or compliance decisions.</p>"
+    },
+    {
+      "id": "acceptable-use",
+      "title": "Acceptable use",
+      "body": "<p>Use Purvey only for lawful business activities and within the permissions granted to your account. You must not:</p><ul><li>Use the service for fraud, deceptive selling, unlawful products or unauthorised payment activity.</li><li>Infringe another person's intellectual-property, privacy or other rights.</li><li>Upload malware, interfere with the service, bypass access controls or probe another person's account without authorisation.</li><li>Misuse customer information, send unlawful marketing, or publish another person's sensitive information without a lawful basis.</li><li>Use the service in a way that breaches applicable law or the rules of a payment service you use.</li></ul><p>Products subject to special restrictions may require permissions or approvals. You are responsible for checking the requirements for your business and payment provider before listing or selling them.</p>"
+    },
+    {
+      "id": "content-and-data",
+      "title": "Your content and customer information",
+      "body": "<p>You retain the rights you hold in the content and business records you provide. You give Purvey permission to host, store, display and process that material as needed to deliver, secure and support the services you use.</p><p>You must have a lawful basis to collect and use customer information. Give customers appropriate privacy information, protect their records and use the information only for authorised, lawful purposes. Using Purvey does not transfer those responsibilities to us.</p><p>Purvey and its licensors retain their rights in the platform, software, branding and materials we provide. A subscription grants access to the service; it does not transfer ownership of the platform.</p>"
+    },
+    {
+      "id": "availability-and-third-parties",
+      "title": "Availability and third-party services",
+      "body": "<p>Maintenance, technical faults, security events and issues with hosting, networks, banks or other providers can affect availability. We do not promise uninterrupted or error-free service.</p><p>Third-party services, including payment and identity-verification providers, have their own terms and privacy notices. A link or connection to a third party does not make Purvey responsible for every aspect of that third party's service.</p><p>These statements do not remove our obligations to provide services with the care, quality and remedies required by applicable law.</p>"
+    },
+    {
+      "id": "suspension-and-closure",
+      "title": "Restrictions, suspension and account closure",
+      "body": "<p>We may restrict or suspend access where reasonably necessary to address suspected fraud, unlawful activity, a serious breach of these terms, a security risk, or a legal or provider requirement. Contact support if you believe a restriction is incorrect or want it reviewed.</p><p>You may stop using Purvey and contact support to request account closure. Stopping use does not by itself create a refund entitlement or cancel obligations arising from earlier transactions.</p><p>Closure may not immediately erase all records. Some information may need to be retained for legal obligations, disputes, fraud prevention or other lawful purposes, as described in the Privacy Policy. Contact us before closure if you need help understanding what will happen to your business records.</p>"
+    },
+    {
+      "id": "responsibility-and-law",
+      "title": "Responsibility, complaints and applicable law",
+      "body": "<p>Merchants are responsible for their own commercial decisions and obligations to customers. Purvey is responsible for its own obligations under these terms and applicable law.</p><p>Nothing in these terms excludes or limits liability, consumer protection, data-protection rights or remedies that cannot lawfully be excluded or limited. References to third-party services, availability or merchant responsibilities must be read subject to that protection.</p><p>These terms are governed by the laws of Nigeria, subject to any mandatory law that applies to you. Please first raise a complaint with <a href=\"mailto:support@purveyhq.com\">support@purveyhq.com</a> so we can try to resolve it. This does not prevent you from approaching a competent regulator, tribunal or court where you are entitled to do so.</p>"
+    },
+    {
+      "id": "changes-and-contact",
+      "title": "Changes and contact",
+      "body": "<p>We may update these terms as the service or applicable requirements change. The date at the top identifies the version. Where the law requires additional notice or agreement for a change, that requirement continues to apply.</p><p>Questions about these terms can be sent to <a href=\"mailto:support@purveyhq.com\">support@purveyhq.com</a>.</p><p><strong>Service operator:</strong> Secern Technologies Limited · RC 7508148 · Nigeria.</p>"
+    }
+  ]
+}
